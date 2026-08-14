@@ -1,0 +1,193 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f8f7f3;
+overflow-x:hidden;
+}
+
+.navbar{
+transition:.4s;
+}
+
+.navbar-brand{
+color:#3d5a40;
+}
+
+.nav-link{
+font-weight:500;
+margin-left:15px;
+transition:.4s;
+}
+
+.nav-link:hover{
+color:#6f9b74;
+transform:translateY(-2px);
+}
+
+.btn{
+transition:.4s;
+}
+
+.btn:hover{
+transform:scale(1.08);
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.hero{
+padding:90px 0;
+background:linear-gradient(to right,#f8f7f3,#edf5ec);
+}
+
+.hero h1{
+font-size:60px;
+color:#264027;
+}
+
+.hero p{
+font-size:18px;
+line-height:1.8;
+}
+
+.hero-img{
+width:90%;
+animation:float 4s ease-in-out infinite;
+filter:drop-shadow(0 20px 25px rgba(0,0,0,.15));
+}
+
+.card{
+transition:.5s;
+overflow:hidden;
+border-radius:25px;
+}
+
+.card img{
+transition:.6s;
+}
+
+.card:hover{
+transform:translateY(-12px);
+box-shadow:0 20px 40px rgba(0,0,0,.15)!important;
+}
+
+.card:hover img{
+transform:scale(1.08);
+}
+
+.feature-card{
+transition:.5s;
+cursor:pointer;
+}
+
+.feature-card:hover{
+background:#6f9b74;
+color:white;
+transform:translateY(-10px);
+}
+
+.feature-card:hover p,
+.feature-card:hover i{
+color:white!important;
+}
+
+.review-card{
+transition:.5s;
+}
+
+.review-card:hover{
+transform:scale(1.05);
+box-shadow:0 20px 40px rgba(0,0,0,.18)!important;
+}
+
+.accordion-button:not(.collapsed){
+background:#6f9b74;
+color:white;
+}
+
+.form-control{
+border:none;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.form-control:focus{
+box-shadow:0 0 15px rgba(111,155,116,.5);
+border:none;
+}
+
+footer i{
+cursor:pointer;
+transition:.4s;
+}
+
+footer i:hover{
+color:#9bc89f;
+transform:translateY(-5px) rotate(10deg);
+}
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+background:#6f9b74;
+border-radius:20px;
+}
+
+::-webkit-scrollbar-track{
+background:#ececec;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+@media(max-width:992px){
+
+.hero{
+text-align:center;
+padding:60px 0;
+}
+
+.hero h1{
+font-size:45px;
+}
+
+.hero-img{
+margin-top:40px;
+width:75%;
+}
+
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:35px;
+}
+
+.card{
+margin-bottom:20px;
+}
+
+.btn{
+margin-bottom:10px;
+}
+
+}

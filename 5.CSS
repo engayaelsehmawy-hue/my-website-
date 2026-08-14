@@ -1,0 +1,314 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+
+    background-image: url("back.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+    color:#333;
+}
+
+.navbar{
+    padding:10px 0;
+}
+
+.navbar-brand{
+    font-size:30px;
+}
+
+.nav-link{
+    margin-left:15px;
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-link:hover{
+    color:#198754;
+}
+
+.hero{
+    padding:50px 0;
+}
+
+.hero h1{
+    font-size:50px;
+    line-height:1.2;
+}
+
+.hero p{
+    font-size:16px;
+}
+
+.hero-img{
+    width:85%;
+    max-width:380px;
+    border-radius:25px;
+    transition:.5s;
+}
+
+.hero-img:hover{
+    transform:scale(1.05);
+}
+
+section{
+    padding:50px 0;
+}
+
+.card{
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+}
+
+.card-img-top{
+    height:200px;
+    width:100%;
+    object-fit:cover;
+}
+
+.card-body{
+    padding:15px;
+}
+
+.card-body h5{
+    margin-bottom:10px;
+}
+
+.card-body p{
+    min-height:40px;
+}
+
+.btn{
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+.feature-card{
+    transition:.4s;
+}
+
+.feature-card:hover{
+    transform:translateY(-8px);
+}
+
+.feature-card i{
+    transition:.4s;
+}
+
+.feature-card:hover i{
+    transform:rotate(10deg) scale(1.2);
+}
+
+.about-img{
+    width:100%;
+    max-height:400px;
+    object-fit:cover;
+}
+
+footer{
+    margin-top:30px;
+}
+
+footer a{
+    text-decoration:none;
+    transition:.3s;
+}
+
+footer a:hover{
+    color:#20c997 !important;
+}
+
+#topBtn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:50px;
+    height:50px;
+    display:none;
+    z-index:999;
+    border:none;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+.custom-alert{
+
+    position:fixed;
+    top:90px;
+    right:30px;
+
+    background:#198754;
+    color:white;
+
+    padding:12px 20px;
+
+    border-radius:15px;
+
+    font-size:15px;
+    font-weight:500;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    animation:showAlert .4s ease;
+
+    z-index:9999;
+}
+
+
+.custom-alert i{
+    font-size:22px;
+}
+
+
+@keyframes showAlert{
+
+    from{
+        opacity:0;
+        transform:translateX(100px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+}
+
+
+.invoice-box{
+
+    position:fixed;
+
+    top:100px;
+    right:30px;
+
+    width:330px;
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
+
+    display:none;
+
+    z-index:9999;
+
+}
+
+
+@media(max-width:992px){
+
+    .hero{
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero-img{
+        margin-top:30px;
+    }
+
+}
+
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:35px;
+    }
+
+    .card-img-top{
+        height:180px;
+    }
+
+    .navbar-brand{
+        font-size:25px;
+    }
+
+}
+
+
+@media(max-width:576px){
+
+    .hero{
+        padding:40px 0;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .btn{
+        margin-top:8px;
+    }
+
+}
+.invoice-box button{
+    margin:5px;
+}
+.order-form{
+
+    position:fixed;
+
+    top:100px;
+    right:30px;
+
+    width:350px;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+    display:none;
+
+    z-index:9999;
+
+}
+
+
+.order-form textarea{
+
+    height:100px;
+
+    resize:none;
+
+}

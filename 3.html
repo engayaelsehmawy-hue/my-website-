@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3</title>
+
+    <style>
+
+        body{
+            background:#eef5ff;
+        }
+
+        .container{
+            width:85%;
+            margin:30px auto;
+            background:#fff;
+            padding:25px;
+            border-radius:12px;
+            box-shadow:0 5px 15px rgba(0,0,0,.1);
+            text-align:center;
+        }
+
+        h2{
+            color:#2d6cdf;
+            margin-bottom:20px;
+        }
+
+        p{
+            color:#555;
+            margin:10px 0;
+        }
+
+        button{
+            background:#4f8df7;
+            color:#fff;
+            border:none;
+            padding:10px 22px;
+            margin:8px;
+            border-radius:8px;
+            cursor:pointer;
+            transition:.3s;
+        }
+
+        button:hover{
+            background:#2d6cdf;
+            transform:scale(1.05);
+        }
+
+        .controls{
+            margin:25px 0;
+        }
+
+        input[type="color"]{
+            width:55px;
+            height:40px;
+            border:none;
+            cursor:pointer;
+            vertical-align:middle;
+        }
+
+        #demo{
+            margin:15px 0;
+            font-weight:bold;
+            color:#333;
+        }
+
+        hr{
+            margin:25px 0;
+            border:1px solid #dbe7ff;
+        }
+
+        canvas{
+            display:block;
+            margin:20px auto;
+            width:100%;
+            max-width:900px;
+            background:#fff;
+            border:2px solid #4f8df7;
+            border-radius:10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Lab 3</h2>
+
+        <p>Click the button to get your coordinates.</p>
+
+        <button onclick="getLocation()">
+            Show Location
+        </button>
+
+        <button onclick="goPosition()">
+            Go To Location
+        </button>
+
+        <p id="demo"></p>
+
+        <hr>
+
+        <div class="controls">
+
+            <label>
+                <b>Circle Color :</b>
+            </label>
+
+            <input type="color" id="color" value="#8e44ad">
+
+            <button onclick="drawCircles()">
+                Click Me
+            </button>
+
+        </div>
+
+        <canvas id="canvas" width="900" height="450"></canvas>
+
+    </div>
+
+    <script>
+
+        let lat;
+        let lng;
+
+        function getLocation() {
+
+            if (navigator.geolocation) {
+
+                navigator.geolocation.getCurrentPosition(showPosition);
+
+            } else {
+
+                document.getElementById("demo").innerHTML = "Geolocation not supported.";
+
+            }
+
+        }
+
+        function showPosition(position) {
+
+            lat = position.coords.latitude;
+            lng = position.coords.longitude;
+
+            document.getElementById("demo").innerHTML =
+                "Latitude : " + lat +
+                "<br>Longitude : " + lng;
+
+        }
+
+        function goPosition() {
+
+            if (lat == undefined) {
+
+                alert("Press Show Location First");
+                return;
+
+            }
+
+            window.open("https://www.google.com/maps?q=" + lat + "," + lng);
+
+        }
+
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+
+        function drawCircles() {
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            let color = document.getElementById("color").value;
+
+            for (let i = 0; i < 100; i++) {
+
+                let x = Math.random() * canvas.width;
+                let y = Math.random() * canvas.height;
+                let r = Math.random() * 20 + 10;
+
+                ctx.beginPath();
+                ctx.arc(x, y, r, 0, 2 * Math.PI);
+                ctx.strokeStyle = color;
+                ctx.stroke();
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
